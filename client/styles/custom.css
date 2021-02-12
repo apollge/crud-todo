@@ -1,0 +1,11 @@
+.ant-layout-header h1 {
+  color: #fff;
+}
+
+.ant-layout-content {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 3rem;
+  width: 100%;
+  height: 100vh;
+}
