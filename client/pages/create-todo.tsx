@@ -1,6 +1,5 @@
-import { InMemoryCache } from "@apollo/client";
 import { Button, Form, Input, message, Typography } from "antd";
-import gql from "graphql-tag";
+import { Store } from "antd/lib/form/interface";
 import { useRouter } from "next/router";
 import React from "react";
 
@@ -14,12 +13,12 @@ const CreateTodo: React.FC<{}> = () => {
 
   const { Title } = Typography;
 
-  const onFinish = async (values) => {
+  const onFinish = async (values: Store) => {
     try {
       const response = await createTodo({
         variables: values,
         update: (cache) => {
-          cache.evict({ fieldName: "todos" });
+          cache.evict({ fieldName: "getTodos" });
         },
       });
 

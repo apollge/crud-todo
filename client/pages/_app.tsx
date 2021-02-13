@@ -1,14 +1,10 @@
+import { ApolloProvider } from "@apollo/client";
 import "antd/dist/antd.css";
-import "../styles/vars.css";
-import "../styles/global.css";
+
+import { client } from "../services/ApolloClient";
 import "../styles/custom.css";
-
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-
-const client = new ApolloClient({
-  uri: "http://localhost:4000/graphql",
-  cache: new InMemoryCache(),
-});
+import "../styles/global.css";
+import "../styles/vars.css";
 
 export default function MyApp({ Component, pageProps }) {
   return (

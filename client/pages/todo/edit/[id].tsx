@@ -1,6 +1,8 @@
 import { Button, Form, Input, message, Spin, Typography } from "antd";
+import { Store } from "antd/lib/form/interface";
 import { useRouter } from "next/router";
 import React from "react";
+
 import Wrapper from "../../../components/Wrapper";
 import {
   useTodoQuery,
@@ -23,7 +25,7 @@ const EditTodo = () => {
 
   const [updateTodo] = useUpdateTodoMutation();
 
-  const onFinish = async (values) => {
+  const onFinish = async (values: Store) => {
     try {
       const response = await updateTodo({
         variables: {
@@ -32,7 +34,6 @@ const EditTodo = () => {
         },
       });
 
-      console.log(response);
       if (response) {
         message.success("To-Do updated.");
 

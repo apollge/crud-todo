@@ -1,4 +1,8 @@
-.ant-layout-header h1 {
+.ant-layout-header {
+  background: #1890ff;
+}
+
+.ant-layout-header h1 a {
   color: #fff;
 }
 
